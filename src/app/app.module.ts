@@ -30,6 +30,7 @@ import { OktaAuth } from '@okta/okta-auth-js';
 
 import myAppConfig from './config/my-app-config';
 import { MembersPageComponent } from './components/members-page/members-page.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const oktaConfig = myAppConfig.oidc;
 
@@ -49,7 +50,7 @@ const routes: Routes = [
 
   {path: 'login/callback', component: OktaCallbackComponent},
   {path: 'login', component: LoginComponent},
-  
+  {path: 'dashboard', component: DashboardComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'cart-details', component: CartDetailsComponent},
   {path: 'products/:id', component: ProductDetailsComponent},
@@ -57,8 +58,8 @@ const routes: Routes = [
   {path: 'category/:id', component: ProductListComponent},
   {path: 'category', component: ProductListComponent},
   {path: 'products', component: ProductListComponent},
-  {path: '', redirectTo: '/products', pathMatch: 'full'},
-  {path: '**', redirectTo: '/products', pathMatch: 'full'}
+  {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  {path: '**', redirectTo: '/dashboard', pathMatch: 'full'}
 ];
 
 @NgModule({
@@ -73,7 +74,8 @@ const routes: Routes = [
     CheckoutComponent,
     LoginComponent,
     LoginStatusComponent,
-    MembersPageComponent
+    MembersPageComponent,
+    DashboardComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

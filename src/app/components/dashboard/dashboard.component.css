@@ -1,0 +1,25 @@
+.dash_img{
+   min-height: 35rem;
+   background-image: url(/assets/images/dashboard.jpeg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+   filter: brightness(20%);
+   padding: 10rem;
+   z-index: 10;
+}
+h2, h4{
+    color:#fff;
+    text-align: center;
+    width: 85%;
+    position: absolute;
+    box-shadow:rgb(164 164 164 / 35%) 20px 16px 20px 8px;
+}
+h2{
+    top:200px;
+}
+
+h4{
+    top:240px;
+    width: 80%;
+}
