@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +9,16 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'angular-ecommerce';
   router: any;
-
+  showFooter: boolean = false;
   constructor(private _router: Router) {
-    this.router = _router.url;
-  }
-
-  hasRoute(route: string) {
-    // console.log(this.router.includes(route)); 
-    return this.router.includes(route);
+    _router.events.subscribe((val) => {
+      if (val instanceof NavigationEnd) {
+        if (val.url == '/') {
+          this.showFooter = false;
+        } else {
+          this.showFooter = true;
+        }
+      }
+    });
   }
 }
