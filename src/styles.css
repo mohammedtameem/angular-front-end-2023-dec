@@ -104,10 +104,10 @@ a,a:hover{
     padding:0 35px
 }
 
-.page-wrapper{
-    overflow:hidden;
-    background:#e5e5e5;
-    padding-bottom:8vh
+.page-wrapper {
+    overflow: hidden;
+    background: #e5e5e5;
+    /* padding-bottom: 4vh; */
 }
 
 .page-container{

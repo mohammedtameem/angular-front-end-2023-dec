@@ -13,7 +13,8 @@ export class AppComponent {
   constructor(private _router: Router) {
     _router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
-        if (val.url == '/') {
+        console.log(val.url)
+        if (val.url == '/dashboard' || val.url == '/') {
           this.showFooter = false;
         } else {
           this.showFooter = true;
